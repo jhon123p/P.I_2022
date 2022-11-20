@@ -1,21 +1,48 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Sample Poject</title> 
-</head> 
-<body> 
-<H1> 
-Project Name is {{ projectname }} 
-    </H1> 
-<br/> 
-<h2> 
-Project Id is {{ id }} 
-    </h2> 
-<br> 
-<h3> 
-Day {{ day }} 
-    </h3> 
-<br> 
-</body> 
+ {% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    
+    <title> QUESTIONARIO </title>
+</head>
+<body id = 'trocar'>
+    
+    <div class="quest1"> 
+        <h1> QUESTIONARIO SOCIOECONOMICO 1</h1>
+        <form action="submit" method="post" enctype="multipart/form-data">
+            
+            {% csrf_token %}
+
+            <select name="tipo_bolsa" >
+                <option value="Permanente">Permanente</option>
+                <option value="Atleta"> Atleta</option>
+                <option value="Cultura"> Cultura</option>
+                <option value="Eventual"> Eventual</option>
+            </select>
+
+            <br>
+            NOME_COMPLETO <input type="text" name="nome_completo" >
+            <br>
+            DATA_NASCIMANTO <input type="date" name="data_nascimento">
+            <br>
+            CPF <input type="number" name="cpf">
+            <br>
+            ENDEREÇO <input type="text" name="endereco">
+            <br>
+            TELEFONE <input type="number" name="nrTelCelular">
+            <br>
+            ARQUIVO <input type="file" name="arquivo">
+            <br>
+            <button type="submit"> ENVIAR </button>
+        </form>
+
+        <button onclick="mudarCor()"> teste </button>
+        
+    </div>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
 </html>

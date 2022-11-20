@@ -14,11 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 #admin , ifpi2022
+from django.conf import settings ## import config feitas das bases
+from django.conf.urls.static import static ## base que para importas os arquivos staticos
 from django.contrib import admin
-from django.urls import path
+from django.urls import path 
 from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('resultado',views.resultado)
-]
+    path('cadastro/', views.socio2),
+    path('cadastro/submit',views.resultado)
+] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
+

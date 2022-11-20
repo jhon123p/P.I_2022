@@ -1,25 +1,37 @@
-from django.shortcuts import render , HttpResponse
+from django.shortcuts import render , HttpResponse , redirect
+from app.models import questEconomico
+
 
 # Create your views here.
 def resultado(request):
-    return render(request , 'indice.html')
+    
+    if request.method == "POST":
+        tipo_bolsa = request.POST.get('tipo_bolsa')
+        nome_completo = request.POST.get('nome_completo')
+        data_nascimento = request.POST.get('data_nascimento')
+        cpf = request.POST.get('cpf')
+        endereco = request.POST.get('endereco')
+        nrTelCelular = request.POST.get('nrTelCelular')
+        arquivo = request.FILES["arquivo"]
+        ##arquivo.save()
+        questEconomico.objects.create(tipo_bolsa = tipo_bolsa,
+                                      nome_completo = nome_completo,
+                                      data_nascimento = data_nascimento,
+                                      cpf = cpf,
+                                      endereco = endereco,
+                                      nrTelCelular = nrTelCelular,
+                                      arquivo = arquivo)
+        return HttpResponse('ARQUIVO ENVIANDO COM SUCESSO')
 
-import pyrebase 
+    return redirect('/resultados')
+
+
+
+
+# Imaginary function to handle an uploaded file.
+
+##import pyrebase 
   
-config = {
-  apiKey: "AIzaSyBu4u2uEZU6OzNBk8Qp5v6rrSMmQnsoVj8",
-  authDomain: "projeto-ifpi-dc359.firebaseapp.com",
-  projectId: "projeto-ifpi-dc359",
-  storageBucket: "projeto-ifpi-dc359.appspot.com",
-  messagingSenderId: "862447392576",
-  appId: "1:862447392576:web:37484c2dbcf195b80ecca5"
-};
-firebase=pyrebase.initialize_app(config) 
-authe = firebase.auth() 
-database=firebase.database() 
-  
-def home(request): 
-    day = database.child('Data').child('Day').get().val() 
-    id = database.child('Data').child('Id').get().val() 
-    projectname = database.child('Data').child('Projectname').get().val() 
-    return render(request,"Home.html",{"day":day,"id":id,"projectname":projectname })
+
+def socio2(request):
+    return render(request , 'indice.html')
