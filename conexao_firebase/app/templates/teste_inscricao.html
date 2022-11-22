@@ -1,0 +1,124 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Formulário Inscrição Bolsas</title>
+  <link rel="stylesheet" href="{% static 'css/style-form.css'%}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CONFIRMAÇÃO DE INSCRIÇÃO<br>PARA ASSISTÊNCIA<br>ESTUDANTIL</h1>
+    </header>
+    <div class="progress-bar">
+      <div class="step">
+        <p>Inscrição</p>
+        <div class="bullet">
+          <span>1</span>
+        </div>
+        <div class="check fas fa-check"></div>
+      </div>
+      <div class="step">
+        <p>Atualizar dados</p>
+        <div class="bullet">
+          <span>2</span>
+        </div>
+        <div class="check fas fa-check"></div>
+      </div>
+    </div>
+    <div class="form-outer">
+      <form action="submit" method="post"> {% csrf_token %}
+        <div class="page slide-page">
+          <div class="title">1.Sobre a Bolsa/auxílio</div>
+          <div class="field">
+            <div class="label" for="modalidade">Modalidade de bolsa/auxilio que deseja:</div>
+            <select id="modalidade" name="modalidade" required>
+              <option value="permanente">Permanente</option>
+              <option value="atleta">Atleta</option>
+              <option value="cultura">Cultura</option>
+              <option value="eventual">Eventual</option>
+            </select>
+          </div>
+          <div class="title">2.Dados do(a) estudante:</div>
+          <div class="field">
+            <div class="label">Nome Completo:</div>
+            <input id="nome" type="text" name="nome_estudante" placeholder="Nome" required maxlength="100">
+          </div>
+          <div class="field">
+            <div class="label">Matricula:</div>
+            <input id="mat" type="text" name="matricula" placeholder="ex:2010567abcd89" required maxlength="13">
+          </div>
+          <div class="field">
+            <div class="label" for="genero" >Gênero:</div>
+            <select id="genero" name="genero" required>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Outros</option>
+            </select>
+          </div>
+          <div class="field">
+            <div class="label">Data Nascimento:</div>
+            <input id="data" type="date" name="data_nascimento" placeholder="dd/mm/aaaa" required>
+          </div>
+          <div class="field">
+            <div class="label">Curso:</div>
+            <input id="crs" type="text" name="curso" placeholder="Curso" required maxlength="100">
+          </div>
+          <div class="field">
+            <div class="label">Identidade:</div>
+            <input type="text" id="idn" name="Identidade" placeholder="XXXXXXX" required required maxlength="7">
+          </div>
+          <div class="title">3.Aspectos Socioeconômicos e Finaceiros do(a) estudante:</div>
+          <div class="field">
+            <div class="label" for="renumeracao">Possui atividade remunerada?</div>
+            <select id="renumeracao" name="renumeracao">
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="contratado">Trabalhador formal com Contrato ou Carteira de Trabalho assinada</option>
+              <option value="autonomo">Trabalhador AUTÔNOMO</option>
+              <option value="estagio">Estágio remunerado</option>
+            </select>
+          </div>
+          <div class="field btns">
+            <button class="firstNext next">Próximo</button>
+          </div>
+        </div>
+
+        <div class="page">
+          <div class="title">Informação básica:</div>
+          <div class="field">
+              <div class="label">Nome Completo:</div>
+              <input id="user" type="text" name="nome_Completo" placeholder="Nome" required maxlength="100">
+          </div>
+          <div class="field">
+              <div class="label">CPF:</div>
+              <input id="cpf" type="text" name="cpf" placeholder="XXX.XXX.XXX-XX"
+                  pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" required maxlength="14">
+          </div>
+          <div class="field">
+              <div class="label">Data Nascimento:</div>
+              <input id="data" type="date" name="Data_Nascimento" placeholder="dd/mm/aaaa" required>
+          </div>
+          <div class="field">
+              <div class="label">Endereço:</div>
+              <input id="end" type="text" name="endereco" placeholder="Endereço" required maxlength="100">
+          </div>
+          <div class="field">
+              <div class="label">Número de telefone:</div>
+              <input type="tel" id="phone" name="nrTelCelular" placeholder="(00) 01234-5678"
+                  pattern="[0-9]{2}[0-9]{1}[0-9]{4}-[0-9]{4}" required required maxlength="13">
+          </div>          
+          <div class="field btns">
+              <button class="prev-1 prev">Anterior</button>
+              <input id="btn-submit" class="enviar" type="submit" value="enviar" name="Enviar">            
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  <script src=" {% static 'js/teste.js'%} "></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>

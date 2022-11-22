@@ -31,7 +31,8 @@ def resultado(request):
 # Imaginary function to handle an uploaded file.
 
 ##import pyrebase 
-  
+def index(request):
+    return render(request , 'index.html')  
 
-def socio2(request):
-    return render(request , 'indice.html')
+def cadastro(request):
+    return render(request , 'teste_inscricao.html')

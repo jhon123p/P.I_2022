@@ -21,8 +21,9 @@ from django.urls import path
 from app import views
 
 urlpatterns = [
+    path('', views.index),
     path('admin/', admin.site.urls),
-    path('cadastro/', views.socio2),
+    path('cadastro/', views.cadastro),
     path('cadastro/submit',views.resultado)
 ] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Questionário Socioeconômico</title>
+    <link rel="stylesheet" href="../css/style-form.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Questionário<br>Socieconomico<br>2022</h1>
+        </header>
+        <div class="form-outer">
+            <form action="#" method="post">
+                <div class="page">
+                    <div class="title">Informação básica:</div>
+                    <div class="field">
+                        <div class="label">Nome Completo:</div>
+                        <input id="user" type="text" name="usuario" placeholder="Nome" required maxlength="100">
+                    </div>
+                    <div class="field">
+                        <div class="label">CPF:</div>
+                        <input id="cpf" type="text" name="CPF" placeholder="XXX.XXX.XXX-XX"
+                            pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}" required maxlength="14">
+                    </div>
+                    <div class="field">
+                        <div class="label">Data Nascimento:</div>
+                        <input id="data" type="date" name="Data" placeholder="dd/mm/aaaa" required>
+                    </div>
+                    <div class="field">
+                        <div class="label">Endereço:</div>
+                        <input id="end" type="text" name="Endereco" placeholder="Endereço" required maxlength="100">
+                    </div>
+                    <div class="field">
+                        <div class="label">Número de telefone:</div>
+                        <input type="tel" id="phone" name="phone" placeholder="(00) 01234-5678"
+                            pattern="[0-9]{2}[0-9]{1}[0-9]{4}-[0-9]{4}" required required maxlength="13">
+                    </div>
+                    <div class="page">
+                        <div class="field btns">
+                            <input id="btn-submit" class="submit" type="submit" value="enviar" name="Enviar">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../javascript/teste.js"></script>
+
+</body>
+</html>

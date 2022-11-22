@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'css/style.css'%} ">
+    <title>Gestão de Bolsas</title>
+</head>
+
+<body>
+    <!--começo tela login-->
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Seja bem-vindo!</h1>
+            <img src="{% static 'assets/bem_vindo.svg'%}" class="left-login-image" alt="bem-vindo animação">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>LOGIN</h1>
+                <form method="post">
+                    <div class="textfield">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" name="usuario" placeholder="Usuário">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="Senha">
+                    </div>
+                        <input class="btn-login" type="submit" value="Login" name="enviar" >
+                </form>
+            </div>
+        </div>
+    </div>
+     <!--termino tela login-->
+</body>
+
+</html>
