@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href=" {% static 'css/style.css'%}">
     <title>Gestão de Bolsas</title>
 </head>
 <body>
@@ -19,13 +20,13 @@
             </div>
             <ul class="sidebar">
                 <div>
-                    <li><a href="#"><ion-icon name="desktop-outline"></ion-icon><span>Início</span></a></li>
-                    <li><a href="../pages/teste.html"><ion-icon name="newspaper-outline"></ion-icon><span>Formulário</span></a></li>
-                    <li><a href="#"><ion-icon name="document-text-outline"></ion-icon><span>Editais</span></a></li>
-                    <li><a href="../pages/inscricoes.html"><ion-icon name="document-attach-outline"></ion-icon><span>Inscrições</span></a></li>
-                    <li><a href="#"><ion-icon name="calendar-outline"></ion-icon><span>Agenda</span></a></li>
-                    <li><a href="#"><ion-icon name="settings-outline"></ion-icon><span>Configurações</span></a></li>
-                    <li><a href="../index.html"><ion-icon name="log-out-outline"></ion-icon><span>Sair</span></a></li>
+                    <li><a href="{% static '#'%}"><ion-icon name="desktop-outline"></ion-icon><span>Início</span></a></li>
+                    <li><a href=" {% static 'teste.html'%}"><ion-icon name="newspaper-outline"></ion-icon><span>Formulário</span></a></li>
+                    <li><a href="{% static '#'%}"><ion-icon name="document-text-outline"></ion-icon><span>Editais</span></a></li>
+                    <li><a href="{% static 'templates/inscricoes.html'%}"><ion-icon name="document-attach-outline"></ion-icon><span>Inscrições</span></a></li>
+                    <li><a href="{% static '#'%}"><ion-icon name="calendar-outline"></ion-icon><span>Agenda</span></a></li>
+                    <li><a href="{% static '#'%}"><ion-icon name="settings-outline"></ion-icon><span>Configurações</span></a></li>
+                    <li><a href="{% static 'templates/index.html'%}"><ion-icon name="log-out-outline"></ion-icon><span>Sair</span></a></li>
                 </div>              
             </ul>
          </nav> 
@@ -71,7 +72,7 @@
           
         </div>
      </main>
-     <script src="../javascript/javascript.js"></script>
+     <script src="{% static 'js/javascript.js'%}"></script>
      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

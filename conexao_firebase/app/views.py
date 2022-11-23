@@ -1,6 +1,7 @@
 from django.shortcuts import render , HttpResponse , redirect
 from app.models import questSEconomico
-
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def resultado(request):
@@ -37,14 +38,29 @@ def resultado(request):
 
     return redirect('/resultados')
 
-
-
-
 # Imaginary function to handle an uploaded file.
 
 ##import pyrebase 
 def index(request):
     return render(request , 'index.html')  
-
+@login_required
 def cadastro(request):
     return render(request , 'teste_inscricao.html')
+@login_required
+def home(request):
+    return render(request,'home.html')
+
+def login_(request):
+    if request.method =='POST':
+        usuario = request.POST['usuario']
+        senha = request.POST['senha']
+        user = authenticate(request, username = usuario, password = senha)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            return redirect('index')
+@login_required
+def logout_(request):
+    logout(request)
+    return redirect('index')
