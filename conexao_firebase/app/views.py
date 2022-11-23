@@ -1,5 +1,5 @@
 from django.shortcuts import render , HttpResponse , redirect
-from app.models import questEconomico
+from app.models import questSEconomico
 
 
 # Create your views here.
@@ -10,7 +10,7 @@ def resultado(request):
         nome_estudante = request.POST.get('nome_estudante')
         matricula = request.POST.get('matricula')
         genero = request.POST.get('genero')
-        data_nascimento = request.POST.get('data_nascimento')
+        data_nascimento = request.POST.get('data_nascimento1')
         curso = request.POST.get('curso')
         Identidade = request.POST.get('Identidade')
         renumeracao = request.POST.get('renumeracao')
@@ -20,7 +20,7 @@ def resultado(request):
         endereco = request.POST.get('endereco')
         nrTelCelular = request.POST.get('nrTelCelular')
         ##arquivo.save()
-        questEconomico.objects.create(modalidade = modalidade,
+        questSEconomico.objects.create(modalidade = modalidade,
                                       nome_estudante = nome_estudante ,
                                       matricula = matricula ,
                                       genero = genero ,

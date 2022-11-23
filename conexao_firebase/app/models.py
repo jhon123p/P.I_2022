@@ -2,12 +2,12 @@ from django.db import models
 
 
 # Create your models here.
-class questEconomico(models.Model):
+class questSEconomico(models.Model):
     modalidade = models.CharField(max_length = 20)
     nome_estudante = models.CharField(max_length = 20)
     matricula = models.CharField(max_length = 20)
     genero = models.CharField(max_length = 20)
-    data_nascimento = models.DateTimeField(verbose_name = "Data_nascimento")
+    data_nascimento1 = models.DateTimeField(verbose_name = "Data_nascimento")
     curso = models.CharField(max_length = 20)
     Identidade = models.CharField(max_length = 10)
     renumeracao = models.CharField(max_length = 20)
@@ -18,7 +18,7 @@ class questEconomico(models.Model):
     endereco = models.CharField(max_length = 20)
     nrTelCelular = models.CharField(max_length=11, blank=True, null=True, verbose_name='Nº telefone celular')
 
-
+#datetime
 
 def __str__(self):
     return self.nome_completo
