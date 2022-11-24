@@ -7,7 +7,7 @@ class questSEconomico(models.Model):
     nome_estudante = models.CharField(max_length = 20)
     matricula = models.CharField(max_length = 20)
     genero = models.CharField(max_length = 20)
-    data_nascimento1 = models.DateTimeField(verbose_name = "Data_nascimento")
+    data_nascimento1 = models.DateTimeField(verbose_name = "data_nascimento1")
     curso = models.CharField(max_length = 20)
     Identidade = models.CharField(max_length = 10)
     renumeracao = models.CharField(max_length = 20)

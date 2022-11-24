@@ -132,5 +132,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR , "media")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ##======== possivel forma de trata lobngin obg
-## LONGIN_URL = '/admin/longin/'
-## LONGIN_REDIRECT_URL = 'core:index'
+LONGIN_URL = 'longin/'
+LONGIN_REDIRECT_URL = 'longin/'

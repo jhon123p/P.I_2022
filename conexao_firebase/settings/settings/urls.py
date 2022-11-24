@@ -26,10 +26,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('home/',views.home,name='home'),
+    path('inscricoes/',views.inscricoes , name = 'inscricoes'),
     path('login/',views.login_,name='login'),
+    path('questSo/' , views.questSo, name = 'questSo'),
     path('logout/',views.logout_,name='logout'),
-    path('resultado/',views.resultado,name='resultado'),
-    path('cadastro/submit',views.resultado)
+    #path('resultado/',views.resultado,name='resultado'),
+    path('inscricoes/submit',views.resultado)
 ] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
 
  

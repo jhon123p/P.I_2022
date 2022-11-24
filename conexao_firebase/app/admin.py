@@ -4,7 +4,7 @@ from django.contrib import admin
 from app.models import questSEconomico
 
 class display(admin.ModelAdmin):
-    list_display = ('modalidade' , ) #metodo de mostrar dados em display
-    list_filter = ('cpf',)
+    list_display = ('modalidade' ,'nome_estudante' ) #metodo de mostrar dados em display
+    list_filter = ('modalidade',)
 
 admin.site.register(questSEconomico , display)

@@ -11,7 +11,7 @@ def resultado(request):
         nome_estudante = request.POST.get('nome_estudante')
         matricula = request.POST.get('matricula')
         genero = request.POST.get('genero')
-        data_nascimento = request.POST.get('data_nascimento1')
+        data_nascimento1 = request.POST.get('data_nascimento1')
         curso = request.POST.get('curso')
         Identidade = request.POST.get('Identidade')
         renumeracao = request.POST.get('renumeracao')
@@ -25,7 +25,7 @@ def resultado(request):
                                       nome_estudante = nome_estudante ,
                                       matricula = matricula ,
                                       genero = genero ,
-                                      data_nascimento = data_nascimento ,
+                                      data_nascimento1 = data_nascimento1 ,
                                       curso = curso ,
                                       Identidade = Identidade ,
                                       renumeracao = renumeracao ,
@@ -41,11 +41,18 @@ def resultado(request):
 # Imaginary function to handle an uploaded file.
 
 ##import pyrebase 
+def inscricoes(request):
+    return render(request , 'teste_inscricao.html')
+
+def questSo(request):
+    return render(request , 'teste.html')
+
 def index(request):
     return render(request , 'index.html')  
 @login_required
 def cadastro(request):
-    return render(request , 'teste_inscricao.html')
+    return render(request , 'inscricoes.html')
+
 @login_required
 def home(request):
     return render(request,'home.html')
@@ -60,6 +67,7 @@ def login_(request):
             return redirect('home')
         else:
             return redirect('index')
+            
 @login_required
 def logout_(request):
     logout(request)

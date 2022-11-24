@@ -20,13 +20,13 @@
             </div>
             <ul class="sidebar">
                 <div>
-                    <li><a href="{% static '#'%}"><ion-icon name="desktop-outline"></ion-icon><span>Início</span></a></li>
-                    <li><a href=" {% url 'cadastro'%}"><ion-icon name="newspaper-outline"></ion-icon><span>Formulário</span></a></li>
-                    <li><a href="{% static '#'%}"><ion-icon name="document-text-outline"></ion-icon><span>Editais</span></a></li>
-                    <li><a href="{% static 'templates/inscricoes.html'%}"><ion-icon name="document-attach-outline"></ion-icon><span>Inscrições</span></a></li>
+                    <li><a href="{% url 'index'%}"><ion-icon name="desktop-outline"></ion-icon><span>Início</span></a></li>
+                    <li><a href=" {% url 'inscricoes'%}"><ion-icon name="newspaper-outline"></ion-icon><span>Formulário</span></a></li>
+                    <li><a href="{% static 'resultado'%}"><ion-icon name="document-text-outline"></ion-icon><span>Editais</span></a></li>
+                    <li><a href="{% url 'questSo'%}"><ion-icon name="document-attach-outline"></ion-icon><span>Inscrições</span></a></li>
                     <li><a href="{% static '#'%}"><ion-icon name="calendar-outline"></ion-icon><span>Agenda</span></a></li>
                     <li><a href="{% static '#'%}"><ion-icon name="settings-outline"></ion-icon><span>Configurações</span></a></li>
-                    <li><a href="{% static 'templates/index.html'%}"><ion-icon name="log-out-outline"></ion-icon><span>Sair</span></a></li>
+                    <li><a href="{% url 'home'%}"><ion-icon name="log-out-outline"></ion-icon><span>Sair</span></a></li>
                 </div>              
             </ul>
          </nav> 
