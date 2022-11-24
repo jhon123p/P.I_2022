@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf import settings ## import config feitas das bases
 from django.conf.urls.static import static ## base que para importas os arquivos staticos
 from django.contrib import admin
-from django.urls import path 
+from django.urls import path , include
 from app import views
 
 
@@ -26,12 +26,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cadastro/', views.cadastro, name='cadastro'),
     path('home/',views.home,name='home'),
+    path('login', views.index , name = 'longin'),
     path('inscricoes/',views.inscricoes , name = 'inscricoes'),
-    path('login/',views.login_,name='login'),
+    #path('login/',views.login,name='login'),
     path('questSo/' , views.questSo, name = 'questSo'),
-    path('logout/',views.logout_,name='logout'),
+    #path('logout/',views.logout_,name='logout'),
     #path('resultado/',views.resultado,name='resultado'),
-    path('inscricoes/submit',views.resultado)
+    path('inscricoes/submit',views.resultado),
+    #
+    path('accounts/' , include('django.contrib.auth.urls'))
+
 ] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
 
  

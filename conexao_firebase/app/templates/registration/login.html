@@ -23,13 +23,18 @@
                 <form method="post"> {% csrf_token%}
                     <div class="textfield">
                         <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" placeholder="Usuário">
+                        <input type="text" name="username" placeholder="Usuario">
                     </div>
                     <div class="textfield">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" placeholder="Senha">
+                        <input type="password" name="password" placeholder="Senha">
                     </div>
                         <button class="btn-login" type="submit" value="Login" name="enviar"> ENVIAR </button>
+
+                    {% for k , v in form.errors.itens %}
+                        {{ v }}
+                    {% endfor %}
+
                 </form>
             </div>
         </div>

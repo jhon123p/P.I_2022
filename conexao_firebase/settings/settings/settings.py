@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path 
 import os
 
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'settings.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['app/templates'],
+        'DIRS': ['app/templates/registration'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,5 +132,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR , "media")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ##======== possivel forma de trata lobngin obg
-LONGIN_URL = 'longin/'
-LONGIN_REDIRECT_URL = 'longin/'
+
+LONGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
