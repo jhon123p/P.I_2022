@@ -20,6 +20,7 @@ def resultado(request):
         Data_Nascimento = request.POST.get('Data_Nascimento')
         endereco = request.POST.get('endereco')
         nrTelCelular = request.POST.get('nrTelCelular')
+        status = request.POST.get('Status')
         ##arquivo.save()
         questSEconomico.objects.create(modalidade = modalidade,
                                       nome_estudante = nome_estudante ,
@@ -33,7 +34,9 @@ def resultado(request):
                                       cpf = cpf ,
                                       Data_Nascimento = Data_Nascimento ,
                                       endereco = endereco ,
-                                      nrTelCelular = nrTelCelular)
+                                      nrTelCelular = nrTelCelular,
+                                      status = status)
+                                      
         return HttpResponse('ARQUIVO ENVIANDO COM SUCESSO')
 
     return redirect('/resultados')
