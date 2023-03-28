@@ -52,7 +52,7 @@ def questSo(request):
     return render(request , 'teste.html')
 
 def index(request):
-    return render(request , 'login.html')  
+    return render(request , 'registration/login.html')  
     
 @login_required
 def cadastro(request):
