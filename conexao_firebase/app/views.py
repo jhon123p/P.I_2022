@@ -37,9 +37,11 @@ def resultado(request):
                                       nrTelCelular = nrTelCelular,
                                       status = status)
                                       
-        return HttpResponse('ARQUIVO ENVIANDO COM SUCESSO')
+        return render(request, 'home.html')
 
-    return redirect('/resultados')
+        #return render()
+
+    return redirect('/home')
 
 # Imaginary function to handle an uploaded file.
 
