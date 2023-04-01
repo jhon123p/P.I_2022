@@ -17,6 +17,7 @@ class questSEconomico(models.Model):
     Data_Nascimento = models.DateField(verbose_name = 'Data_nascimento')
     endereco = models.CharField(max_length = 20)
     nrTelCelular = models.CharField(max_length=11, blank=True, null=True, verbose_name='Nº telefone celular')
+    status = models.CharField(max_length=10 , null=True , verbose_name= 'resultado_Submissão')
 
 #datetime
 

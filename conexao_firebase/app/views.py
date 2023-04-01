@@ -20,6 +20,7 @@ def resultado(request):
         Data_Nascimento = request.POST.get('Data_Nascimento')
         endereco = request.POST.get('endereco')
         nrTelCelular = request.POST.get('nrTelCelular')
+        status = request.POST.get('Status')
         ##arquivo.save()
         questSEconomico.objects.create(modalidade = modalidade,
                                       nome_estudante = nome_estudante ,
@@ -33,10 +34,14 @@ def resultado(request):
                                       cpf = cpf ,
                                       Data_Nascimento = Data_Nascimento ,
                                       endereco = endereco ,
-                                      nrTelCelular = nrTelCelular)
-        return HttpResponse('ARQUIVO ENVIANDO COM SUCESSO')
+                                      nrTelCelular = nrTelCelular,
+                                      status = status)
+                                      
+        return render(request, 'home.html')
 
-    return redirect('/resultados')
+        #return render()
+
+    return redirect('/home')
 
 # Imaginary function to handle an uploaded file.
 
@@ -49,7 +54,7 @@ def questSo(request):
     return render(request , 'teste.html')
 
 def index(request):
-    return render(request , 'login.html')  
+    return render(request , 'registration/login.html')  
     
 @login_required
 def cadastro(request):
