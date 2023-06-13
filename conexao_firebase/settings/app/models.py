@@ -1,13 +1,15 @@
 from django.db import models
 
 
+
+
 # Create your models here.
 class questSEconomico(models.Model):
     modalidade = models.CharField(max_length = 20)
     nome_estudante = models.CharField(max_length = 20)
     matricula = models.CharField(max_length = 20)
     genero = models.CharField(max_length = 20)
-    data_nascimento1 = models.DateTimeField(verbose_name = "data_nascimento1")
+    data_nascimento1 = models.DateField(verbose_name = "data_nascimento1")
     curso = models.CharField(max_length = 20)
     Identidade = models.CharField(max_length = 10)
     renumeracao = models.CharField(max_length = 20)
@@ -30,4 +32,4 @@ def __str__(self):
   #  receive_newsletter = forms.BooleanField()
 
    # class Meta:
-    #    model = Settings
+    #    model = Settings"""

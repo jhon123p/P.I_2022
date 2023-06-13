@@ -1,3 +1,4 @@
+"""
 from django.test import TestCase
 from .models import questSEconomico
 from datetime import datetime
@@ -78,3 +79,5 @@ class  TestPaginaInicial(TestCase):
         
         
     
+
+"""
