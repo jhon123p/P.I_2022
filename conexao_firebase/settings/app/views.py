@@ -1,7 +1,7 @@
 from django.shortcuts import render , HttpResponse , redirect
 from app.models import questSEconomico
-#from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required 
 
 # Create your views here.
 def resultado(request):
@@ -37,7 +37,7 @@ def resultado(request):
                                       nrTelCelular = nrTelCelular,
                                       status = status)
                                       
-        return render(request, 'home.html')
+        return render(request, 'ok.html')
 
         #return render()
 
@@ -60,22 +60,22 @@ def index(request):
 def cadastro(request):
     return render(request , 'inscricoes.html')
 
-@login_required
+
 def home(request):
     return render(request,'home.html')
 
 
 
-#def login_(request):
-#    if request.method =='POST':
-#        usuario = request.POST['usuario']
-#        senha = request.POST['senha']
-#        user = authenticate(request, username = usuario, password = senha)
-#        if user is not None:
-#            login(request, user)
-#            return redirect('home')
-#        else:
-#            return redirect('index')#
+def login_(request):
+    if request.method =='POST':
+        usuario = request.POST['usuario']
+        senha = request.POST['senha']
+        user = authenticate(request, username = usuario, password = senha)
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            return redirect('index')#
             
 #@login_required
 #def logout_(request):

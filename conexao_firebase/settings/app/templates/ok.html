@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #retangulo {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            position: absolute;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: moveX 10s ease-in-out infinite, moveY 15s ease-in-out infinite;
+        }
+
+        @keyframes moveX {
+            0%, 100% { left: 0; }
+            50% { left: calc(100% - 200px); }
+        }
+
+        @keyframes moveY {
+            0%, 100% { top: 0; }
+            50% { top: calc(100% - 200px); }
+        }
+
+        h1 {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            background: black
+        }
+    </style>
+</head>
+<body>
+    <div id="retangulo">
+        <button onclick = paginaHome()>
+            
+            <h1>Cadastro enviado com sucesso clique aqui </h1>
+        </button>
+    </div>
+    <script>
+        function paginaHome(){
+            window.location.href = 'http://localhost:8000/home/'
+        }
+    </script>
+</body>
+</html>
